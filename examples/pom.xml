@@ -13,6 +13,26 @@
     	<module>spring-mvc-example</module>
     </modules>
     
+    <properties>
+		<spring.version>4.1.2.RELEASE</spring.version>
+    	<h2.version>1.4.182</h2.version>
+		<spring.data.version>1.7.1.RELEASE</spring.data.version>
+		<jpa.version>2.1</jpa.version>
+		<hibernate.jpa.version>1.0.0.Final</hibernate.jpa.version>
+		<hibernate.version>4.3.7.Final</hibernate.version>
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+    	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+    
     <build>
     	<plugins>
     		<plugin>
