@@ -12,7 +12,6 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "USER")
 public class User extends BaseEntity{
-	private static final long serialVersionUID = -3554552441536654845L;
 	
 	@Id
 	@SequenceGenerator(name = "userGen", sequenceName = "USER_SEQ")
