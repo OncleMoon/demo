@@ -1,5 +1,7 @@
 package com.hongbo.demo.springmvc.domain;
 
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -70,5 +72,19 @@ public class User extends BaseEntity{
 
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
+	}
+
+	@Override
+	public Map<String, String> validateEntity() {
+		Boolean isSuccess = true;
+		StringBuffer message = new StringBuffer("Validate User failed: ");
+		if (this.email == null) {
+			isSuccess = false;
+			message.append("email must be not null.");
+		}
+
+		messages.put("isSuccess", isSuccess.toString());
+		messages.put("message", isSuccess? "Validate User sucessed." : message.toString());
+		return messages;
 	}
 }

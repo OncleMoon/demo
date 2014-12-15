@@ -1,4 +1,4 @@
-package com.hongbo.demo.springmvc.repository;
+package com.hongbo.demo.springmvc;
 
 import java.util.Properties;
 

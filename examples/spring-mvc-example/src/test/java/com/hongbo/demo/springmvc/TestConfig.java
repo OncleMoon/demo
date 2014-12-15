@@ -1,4 +1,4 @@
-package com.hongbo.demo.springmvc.repository;
+package com.hongbo.demo.springmvc;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

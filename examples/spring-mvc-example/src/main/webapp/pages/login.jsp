@@ -10,31 +10,33 @@
 
 	<title>Spring MVC Example</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="resources/bootstrap/js/bootstrap.min.js" rel="stylesheet">
-	<link href="resources/jQuery/jquery-2.1.1.min.js" rel="stylesheet">
-	<link href="resources/js/login.js" rel="stylesheet">
+	<script type="text/javascript" src="../resources/jQuery/jquery-2.1.1.min.js"></script>
+
+	<script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
+	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="../resources/js/login.js"></script>
 
 	<!-- Custom styles for this template -->
-	<link href="resources/css/signin.css" rel="stylesheet">
+	<link href="../resources/css/signin.css" rel="stylesheet">
 
 	</head>
 
 	<body>
 		<div class="container">
-			<form class="form-signin" role="form">
+			<form name="user" id="user" class="form-signin">
 				<h2 class="form-signin-heading">Please sign in</h2>
 				<label for="inputEmail" class="sr-only">Email address</label> 
-				<input type="email" id="inputEmail" class="form-control" cplaceholder="Email address" required="" autofocus=""> 
+				<input type="email" name="email" class="form-control" placeholder="Email address" required=""> 
 				<label for="inputPassword" class="sr-only">Password</label> 
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+				<input type="password" name="password" class="form-control" placeholder="Password" required="">
 				<div class="checkbox">
 					<label> 
 						<input type="checkbox" value="remember-me">
 						Remember me
 					</label>
 				</div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+				<button id="login" class="btn btn-lg btn-primary btn-block">Sign in</button>
 			</form>
 		</div>
 		<!-- /container -->

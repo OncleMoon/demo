@@ -1,4 +1,4 @@
-package com.hongbo.demo.springmvc.repository;
+package com.hongbo.demo.springmvc.service;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,16 +10,20 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.hongbo.demo.springmvc.JpaTestConfig;
 import com.hongbo.demo.springmvc.TestConfig;
 import com.hongbo.demo.springmvc.domain.User;
+import com.hongbo.demo.springmvc.repository.UserRespository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JpaTestConfig.class, TestConfig.class})
-public class UserRepositoryTest {
+public class UserServiceTest {
+	
+	@Autowired
+	private UserService userService;
 	
 	@Autowired
 	private UserRespository userRespository;
 	
 	@Test
-	public void testInsert(){
+	public void testLogin(){
 		User user = new User();
 		user.setId(123L);
 		user.setEmail("abc@ss.com");
@@ -28,7 +32,8 @@ public class UserRepositoryTest {
 		
 		userRespository.save(user);
 		
-		Assert.assertTrue(userRespository.count() > 0);
+		boolean isSuccess = userService.login(user);
+		Assert.assertTrue(isSuccess);
 	}
 
 }
