@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -27,5 +29,28 @@ public class EmployeeApplicationService {
 	public List<Employee> getEmployees(){
 		List<Employee> employees = employeeService.getEmployees();
 		return employees;
+	}
+	
+	@GET
+	@Path("/getEmployeeById/{employeeId}")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Employee getEmployeeById(@PathParam("employeeId") String employeeId){
+		List<Employee> employees = employeeService.getEmployees();
+		for(Employee employee : employees) {
+			if(employee.getId() == Integer.parseInt(employeeId)) {
+				return employee;
+			}
+		}
+		return new Employee();
+	}
+	
+	@POST
+	@Path("/newEmployee")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Employee getEmployeeById(Employee employee){
+		System.out.println(employee.toString());
+		return employee;
 	}
 }

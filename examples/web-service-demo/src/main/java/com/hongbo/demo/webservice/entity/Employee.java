@@ -22,4 +22,8 @@ public class Employee {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	@Override
+	public String toString() {
+		return String.format("Employee[id=%d],[name=%s],[code=%s]", id, name, code);
+	}
 }
